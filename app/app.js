@@ -8,10 +8,8 @@ const port = 3000;
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-    res.render('index');
-    console.log('served /index');
-});
+const routes = require('./routes');
+app.use('/', routes);
 
 app.all('*', (req, res) => res.send('404')); // catch-all fallback
 

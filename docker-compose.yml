@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+  nodeships:
+    container_name: nodeships
+    image: node:alpine
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+      - "8000:8000"
+    working_dir: /app
+    command: npm run startServer
